@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and Babel imports -->
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Define the Gallery component
+    const Gallery = (props) => {
+      return (
+        <div className="image">
+          <img src={props.src} alt="Gallery" />
+          <p>{props.text}</p>
+        </div>
+      );
+    };
+
+
+
+    const ele = (
+      <Gallery src={"Screenshot 2024-06-23 134817.png"} text={"Copy image"} />
+    );
+
+    // Rendering using ReactDOM.createRoot for concurrent mode
+    const rr =ReactDOM.createRoot(document.getElementById("root"));
+    rr.render(ele);
+  </script>
+</body>
+</html>
